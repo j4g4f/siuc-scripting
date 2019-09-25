@@ -1,0 +1,22 @@
+---
+  - name: "Install and Start Apache Webserver"
+    hosts: localhost
+    tasks:
+
+  - name: Install Apache Package
+    yum:
+      name: httpd
+      state: present
+  - name: Ensure Apache is Started and Running
+    service:
+      name: httpd 
+      state: started
+  - name: Open Port 80 in firewalld for Access
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+  - name: Restart firewalld to load in new rule
+    service: 
+      name: firewalld 
+      state: restarted
