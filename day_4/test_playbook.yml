@@ -1,0 +1,10 @@
+---
+  - name: "Testing to Ensure localhost works!"
+    hosts: localhost
+    tasks:
+
+    - name: "just execute a ls -lrt command"
+      shell: "ls -lrt"
+      register: "output"
+
+    - debug: var=output.stdout_lines
