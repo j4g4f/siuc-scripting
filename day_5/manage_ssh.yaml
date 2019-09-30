@@ -36,4 +36,4 @@
     - name: Reload SSHD
       service:
         name: sshd
-        state: reload
+        state: reloaded
