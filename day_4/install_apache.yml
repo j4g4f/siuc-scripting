@@ -1,0 +1,13 @@
+---
+  - name: "Testing to Ensure localhost works!"
+    hosts: localhost
+    tasks:
+
+    - name: Install Apache Package #4 Spaces here
+      yum: # 6 Spaces here
+        name: httpd # 8 Spaces here
+        state: present # 8 Spaces here
+    - name: Ensure Apache is Started and Running
+      service:
+        name: httpd
+        state: started
