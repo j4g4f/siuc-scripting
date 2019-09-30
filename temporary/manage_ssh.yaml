@@ -1,0 +1,10 @@
+---
+  - name: "Playbook to Manage SSH on a Server"
+    hosts: localhost
+    tasks:
+
+    - name: Set authorized key taken from file
+      authorized_key:
+        user: centos
+        state: present
+        key: "{{ lookup('file', '/home/centos/.ssh/id_rsa.pub') }}"
